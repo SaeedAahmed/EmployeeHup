@@ -1,0 +1,29 @@
+.create {
+  background: #10d3ec;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.5s;
+  }
+  .create:hover{
+  background: #1c9eaf;
+  }
+  .submit{
+    background: #10d3ec;
+    color: #fff;
+    border-radius: 7px;
+    text-decoration: none;
+    padding: 10px;
+    border: none;
+
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.5s;
+  }
+  .submit:hover{
+    background: #1c9eaf ; 
+  }

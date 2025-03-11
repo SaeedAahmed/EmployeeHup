@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.17.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "version": "1.20.0",
+    "libraryName": "employee-hub",
+    "libraryId": "fabe7f6b-4d9e-4027-8f94-7be314bb7ee8",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "employee-hub",
+    "solutionShortDescription": "employee-hub description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
