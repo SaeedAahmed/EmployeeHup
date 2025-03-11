@@ -6,6 +6,7 @@ import "@pnp/sp/items";
 import "@pnp/sp/folders"; 
 import "@pnp/sp/files"; 
 
+
 import { WebPartContext } from "@microsoft/sp-webpart-base"; 
 import { IEmployee } from "../Interfaces/IEmployee"; 
 
@@ -18,23 +19,27 @@ export const SP = (context: WebPartContext): void => {
 }; 
 
 /*   Create Employee   */
-export const createEmployee = async (employee: IEmployee): Promise<any> => { 
-  if (!_sp) throw new Error("not initialized!"); 
+import { IItem } from "@pnp/sp/items";
 
-  try { 
-    const item = await _sp.web.lists.getByTitle("EmployeesProfile").items.add({ 
-      Title: employee.name, 
-      JobTitle: employee.jobTitle, 
-      Department: employee.department, 
-      Email: employee.email, 
-      ProfilePictureUrl: employee.profilePictureUrl, 
-    }); 
+export const createEmployee = async (employee: IEmployee): Promise<IItem> => {
+  if (!_sp) throw new Error("not initialized!لم  !");
+
+  try {
+    const item = await _sp.web.lists.getByTitle("EmployeesProfile").items.add({
+      Title: employee.name,
+      JobTitle: employee.jobTitle,
+      Department: employee.department,
+      Email: employee.email,
+      ProfilePictureUrl: employee.profilePictureUrl,
+    });
+
     return item; 
-  } catch (error) { 
-    console.error("Faild creating employee", error); 
-    throw error; 
-  } 
-}; 
+  } catch (error) {
+    console.error("Failed creating employee", error);
+    throw error;
+  }
+};
+
 
 /*   Get Employees   */
 export const getEmployees = async (): Promise<IEmployee[]> => { 

@@ -36,7 +36,7 @@ const ListingPage: React.FC = () => {
       }
     }; 
   
-     fetchData().catch(error => console.error("faild in fetchEmployee:", error));; 
+     fetchData().catch(error => console.error("faild in fetchEmployee:", error)); 
   }, []);
 
   const filteredEmployees = employeeList.filter(emp =>

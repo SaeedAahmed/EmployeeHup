@@ -24,7 +24,7 @@ const PreviewPage: React.FC = () => {
       }
     };
 
- fetchEmployee().catch(error => console.error("faild in fetchEmployee:", error));;
+ fetchEmployee().catch(error => console.error("faild in fetchEmployee:", error));
   }, [id]);
 
   if (isLoading) {

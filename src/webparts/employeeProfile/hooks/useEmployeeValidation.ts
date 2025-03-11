@@ -9,7 +9,9 @@ interface IErrors {
   profilePictureUrl: string;
 }
 
-export const useEmployeeValidation = (employee: IEmployee) => {
+export const useEmployeeValidation = (
+  employee: IEmployee
+): { errors: IErrors; validate: () => boolean } => {
   const [errors, setErrors] = useState<IErrors>({
     name: "",
     jobTitle: "",
@@ -44,13 +46,13 @@ export const useEmployeeValidation = (employee: IEmployee) => {
       errorsObj.email = "Email is required";
       isValid = false;
     } else {
-      const emailRegex = /^.+@[a-zA-Z]+(\.[a-zA-Z]+)+$/;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(employee.email)) {
         errorsObj.email = "Email is invalid";
         isValid = false;
       }
     }
-    if (!employee.profilePictureUrl) {
+    if (!employee.profilePictureUrl.trim()) {
       errorsObj.profilePictureUrl = "Profile picture is required";
       isValid = false;
     }

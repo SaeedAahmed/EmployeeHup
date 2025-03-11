@@ -34,17 +34,17 @@ const EditPage: React.FC = () => {
         setIsLoading(false);
       }
     };
-    fetchEmployee().catch(error => console.error("Faild in fetchEmployee:", error));;
+    fetchEmployee().catch(error => console.error("Faild in fetchEmployee:", error));
   }, [id]);
 
-  const Change = (field: keyof IEmployee, value: string) => {
+  const Change = (field: keyof IEmployee, value: string):void => {
     if (employee) {
       setEmployee({ ...employee, [field]: value });
     }
   };
 
   // Update emp in list
-  const Update = async (e: React.FormEvent<HTMLFormElement>) => {
+  const Update = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     if (employee) {
       try {
