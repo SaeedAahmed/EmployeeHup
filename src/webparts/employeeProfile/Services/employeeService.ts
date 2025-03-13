@@ -9,6 +9,7 @@ import "@pnp/sp/files";
 
 import { WebPartContext } from "@microsoft/sp-webpart-base"; 
 import { IEmployee } from "../Interfaces/IEmployee"; 
+import { IItem } from "@pnp/sp/items";
 
 let _sp: SPFI | undefined = undefined;
 
@@ -19,10 +20,9 @@ export const SP = (context: WebPartContext): void => {
 }; 
 
 /*   Create Employee   */
-import { IItem } from "@pnp/sp/items";
 
 export const createEmployee = async (employee: IEmployee): Promise<IItem> => {
-  if (!_sp) throw new Error("not initialized!لم  !");
+  if (!_sp) throw new Error("not initialized!");
 
   try {
     const item = await _sp.web.lists.getByTitle("EmployeesProfile").items.add({
